@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".demo.MainActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tv_select"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="选择视频"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:paddingVertical="10dp"
+        android:background="@color/teal_700"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_compress"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tv_compress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="开始压缩"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:background="@color/teal_700"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv_select"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_select"
+        app:layout_constraintBottom_toBottomOf="@id/tv_select"/>
+
+    <ProgressBar
+        android:id="@+id/progress_horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:max="100"
+        android:visibility="gone"
+        tools:visibility="visible"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/tv_select"
+        app:layout_constraintEnd_toStartOf="@id/tv_progress"
+        app:layout_constraintTop_toBottomOf="@id/tv_select"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_progress"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="00.00%"
+        android:gravity="center_vertical|end"
+        android:textSize="14dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintStart_toEndOf="@id/progress_horizontal"
+        app:layout_constraintEnd_toEndOf="@id/tv_compress"
+        app:layout_constraintTop_toTopOf="@id/progress_horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/progress_horizontal"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_path"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/tv_select"
+        app:layout_constraintEnd_toEndOf="@id/tv_compress"
+        app:layout_constraintTop_toBottomOf="@id/progress_horizontal"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
